@@ -18,7 +18,7 @@ file = open('data.txt','r')
 data = csv.reader(file,delimiter=",")
 
 result = sorted(data, key = lambda x : int(x[0]))
-print "'PID',","'LADDR',","'RADDR',","'STATUS'"
+print '"PID",','"LADDR",','"RADDR",','"STATUS"'
 
 for i in result:
-	print str(i).replace('[','').replace(']','')
+	print str(i).replace('[','').replace(']','').replace("'",'"')
